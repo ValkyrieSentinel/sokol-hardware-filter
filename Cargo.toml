@@ -1,0 +1,17 @@
+[package]
+name = "sokol-hardware-filter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Helga <ValkyrieSentinel>"]
+description = "Zero-alloc, zero-panic biomimetic hardware filter engine for Sokol-Core (XDP/eBPF Data Plane)"
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+overflow-checks = false
